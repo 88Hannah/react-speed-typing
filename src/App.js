@@ -1,51 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import useGameLogic from './hooks/useGameLogic'
 
 function App() {
-
-  const GAME_LENGTH = 5
-
-  const [ text, setText ] = useState("");
-  const [ wordCount, setWordCount ] = useState(0);
-  const [ timeRemaining, setTimeRemaining ] = useState(GAME_LENGTH);
-  const [ isPlaying, setIsPlaying ] = useState(false)
-
-  const handleChange = event => {
-    const { value } = event.target
-    setText(value)
-  }
-
-  const calculateWordCount = text => {
-    const textArray = text.split(" ")
-    const wordsOnly = textArray.filter(item => item !== "")
-    setWordCount(wordsOnly.length)
-  }
-
-  useEffect(() => {
-    if(timeRemaining > 0 && isPlaying) {
-      setTimeout(() => {
-        setTimeRemaining(prevTime => prevTime - 1)
-      }, 1000)
-    } else if(timeRemaining === 0) {
-        endGame()
-      }
-  }, [timeRemaining, isPlaying])
-
-  const startGame = () => {
-    setIsPlaying(true)
-    setTimeRemaining(GAME_LENGTH)
-    setText("")
-  }
-  
-  
-  const endGame = () => {
-    setIsPlaying(false)
-    calculateWordCount(text)
-  }
+  const {
+    text,
+    wordCount,
+    timeRemaining,
+    isPlaying,
+    textBoxRef,
+    handleChange,
+    startGame
+  } = useGameLogic(11)
 
   return (
     <div>
       <h1>Speed Typing Game</h1>
       <textarea
+        ref={textBoxRef}
         placeholder="Start typing here ..."
         value={text}
         onChange={handleChange}  
