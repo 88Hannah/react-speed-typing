@@ -7,14 +7,16 @@ function App() {
     wordCount,
     timeRemaining,
     isPlaying,
+    results,
     textBoxRef,
     handleChange,
     startGame
-  } = useGameLogic(11)
+  } = useGameLogic(4)
 
   return (
     <div>
       <h1>Speed Typing Game</h1>
+
       <textarea
         ref={textBoxRef}
         placeholder="Start typing here ..."
@@ -22,14 +24,28 @@ function App() {
         onChange={handleChange}  
         disabled={!isPlaying}
       />
+
       <h4>Time remaining: {timeRemaining} seconds</h4>
+
       <button 
         disabled={isPlaying} 
         onClick={startGame}
       >
         Start
       </button>
-      <h1>Word count: {wordCount}</h1>
+
+      <h2>Word count: {wordCount}</h2>
+
+      {results[0] ? 
+        <>
+        <h3>Top Results</h3>
+        <p>First: {results[0]}</p> 
+        </>
+        : null}
+
+      {results[1] ? <p>Second: {results[1]}</p> : null}
+      {results[2] ? <p>Third: {results[2]}</p> : null}
+
     </div>
   );
 }
