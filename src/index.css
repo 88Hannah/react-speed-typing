@@ -1,46 +1,94 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
 body {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Gaegu', cursive;
+  background: lightyellow;
+
+}
+
+.container {
+  width: min(90%, 600px);
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1rem 0;
+} 
+
+h3 {
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+h4 {
+  font-size: 2em;
+  font-weight: 700;
+  padding: 1rem 0;
+} 
+
+textarea {
+  font-family: 'Roboto Mono', monospace;
+  border: 3px solid black;
+  width: 100%;
+  height: 200px;
+  background: hsl(195, 53%, 90%);
+  padding: 10px;
+}
+
+textarea:disabled {
+  background-color: hsl(0, 2%, 55%);
+}
+
+button {
+  font-family: inherit;
+  font-size: 2em;
+  border: none;
+  background: lightgreen;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+button:disabled {
+  background: hsl(120, 73%, 90%);
+  cursor: not-allowed;
 }
 
 
+.outerContainer {
+  position: relative;
+  min-height: 100vh;
+}
 
-/* html, body {
-  background: black;
-  color: #00b800;
-  margin:0;
-  padding: 0;
-  padding-top: 10px;
-  font-family: 'Press Start 2P', cursive;
-  text-align: center;
-} */
+.results {
+  padding-bottom: 100px;
+}
 
-/* body {
-  font-weight: 400;
-} */
 
-/* button {
-  font-family: 'Press Start 2P', cursive;
-  display: block;
-  margin: 0 auto;
-  border: none;
-  background: #a80020;
-  background: #00b800;
-  padding: 10px 20px;
-  text-transform: uppercase;
-} */
+/* Footer */
+.footer {
+  background-color: #f1c5c5;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
-/* h1 {
-  font-size: 20px;
-  text-align:center;
-} */
-
-/* textarea {
-  font-family: 'Press Start 2P', cursive;
-  border: 3px solid black;
-  width: 90%;
-  margin: 0 auto;
-  outline: none;
-  height: 200px;
-  background: #00b800;
-  padding: 10px;
-} */
+.logo {
+  width: 200px;
+  padding: 10px 30px;
+}

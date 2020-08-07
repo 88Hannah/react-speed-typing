@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 
-function useGameLogic(gameLength) {
+function useGameLogic(gameLength, resultsLength = 3) {
 
     const [ text, setText ] = useState("");
     const [ wordCount, setWordCount ] = useState(0);
@@ -24,8 +24,7 @@ function useGameLogic(gameLength) {
         setWordCount(newScore)
         setResults(prevResults => {
             const newResults = [...prevResults, newScore].sort((a, b) => b - a)
-            console.log(newResults)
-            return newResults
+            return newResults.slice(0, resultsLength)
         })
     }
 
@@ -46,6 +45,7 @@ function useGameLogic(gameLength) {
         setIsPlaying(true)
         setTimeRemaining(gameLength)
         setText("")
+        setWordCount(0)
     }
     
     
