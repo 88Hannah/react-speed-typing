@@ -1,37 +1,19 @@
 import React from 'react';
-import useGameLogic from './hooks/useGameLogic'
+import Header from './components/Header';
+import Game from './components/Game';
+import Footer from './components/Footer';
 
 function App() {
-  const {
-    text,
-    wordCount,
-    timeRemaining,
-    isPlaying,
-    textBoxRef,
-    handleChange,
-    startGame
-  } = useGameLogic(11)
 
   return (
-    <div>
-      <h1>Speed Typing Game</h1>
-      <textarea
-        ref={textBoxRef}
-        placeholder="Start typing here ..."
-        value={text}
-        onChange={handleChange}  
-        disabled={!isPlaying}
-      />
-      <h4>Time remaining: {timeRemaining} seconds</h4>
-      <button 
-        disabled={isPlaying} 
-        onClick={startGame}
-      >
-        Start
-      </button>
-      <h1>Word count: {wordCount}</h1>
+    <div className="outer-container">
+      <div className="container">
+        <Header />
+        <Game />
+      </div>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

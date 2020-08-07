@@ -1,46 +1,113 @@
-body {
-  font-family: 'Press Start 2P', cursive;
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Gaegu', cursive;
+  background: lightyellow;
+}
 
+.outer-container {
+  position: relative;
+  min-height: 100vh;
+}
 
-/* html, body {
-  background: black;
-  color: #00b800;
-  margin:0;
-  padding: 0;
-  padding-top: 10px;
-  font-family: 'Press Start 2P', cursive;
+.container {
+  width: min(90%, 600px);
+  margin: 0 auto;
   text-align: center;
-} */
+  padding: 20px 0;
+}
 
-/* body {
-  font-weight: 400;
-} */
+/* Game */
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  padding: 1rem 0;
+}
 
-/* button {
-  font-family: 'Press Start 2P', cursive;
-  display: block;
-  margin: 0 auto;
-  border: none;
-  background: #a80020;
-  background: #00b800;
-  padding: 10px 20px;
-  text-transform: uppercase;
-} */
-
-/* h1 {
-  font-size: 20px;
-  text-align:center;
-} */
-
-/* textarea {
-  font-family: 'Press Start 2P', cursive;
+textarea {
+  font-family: 'Roboto Mono', monospace;
   border: 3px solid black;
-  width: 90%;
-  margin: 0 auto;
-  outline: none;
+  width: 100%;
   height: 200px;
-  background: #00b800;
+  background: hsl(195, 53%, 90%);
   padding: 10px;
-} */
+}
+
+textarea:disabled {
+  background-color: hsl(0, 2%, 55%);
+}
+
+.time-remaining {
+  font-size: 2em;
+  padding: 0.5rem;
+}
+
+button {
+  font-family: inherit;
+  font-size: 2em;
+  font-weight: 700;
+  border: none;
+  background: lightgreen;
+  padding: 5px 25px;
+  text-transform: uppercase;
+}
+
+button:disabled {
+  background: hsl(120, 73%, 90%);
+  cursor: not-allowed;
+}
+
+/* Results */
+.results {
+  margin-bottom: 60px;
+}
+
+.results__wordcount {
+  line-height: 2.3rem;
+  font-size: 1.8em;
+  padding: 1.5rem;
+}
+
+.results__top {
+  font-size: 2em;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.results__item {
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 3rem;;
+}
+
+.results__item__score {
+  font-weight: 700;
+}
+
+@keyframes pulse {
+  0% {font-size: 1.2rem;}
+  100% {font-size: 1.4rem;}
+}
+
+.new-high {
+  animation: pulse 0.7s linear 0s infinite alternate;
+}
+
+/* Footer */
+.footer {
+  background-color: #f1c5c5;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.logo {
+  width: 150px;
+  padding: 10px 30px;
+}
