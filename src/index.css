@@ -1,12 +1,18 @@
+/* General */
 * {
   margin: 0;
-  padding: 0
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Gaegu', cursive;
   background: lightyellow;
+}
 
+.outer-container {
+  position: relative;
+  min-height: 100vh;
 }
 
 .container {
@@ -14,32 +20,14 @@ body {
   margin: 0 auto;
   text-align: center;
   padding: 20px 0;
-  
 }
 
+/* Game */
 h1 {
   font-size: 3em;
   font-weight: 700;
   padding: 1rem 0;
 }
-
-h2 {
-  font-size: 2em;
-  font-weight: 700;
-  padding: 1rem 0;
-} 
-
-h3 {
-  font-size: 2em;
-  font-weight: 700;
-  padding: 1rem 0;
-}
-
-h4 {
-  font-size: 2em;
-  font-weight: 700;
-  padding: 1rem 0;
-} 
 
 textarea {
   font-family: 'Roboto Mono', monospace;
@@ -54,12 +42,18 @@ textarea:disabled {
   background-color: hsl(0, 2%, 55%);
 }
 
+.time-remaining {
+  font-size: 2em;
+  padding: 0.5rem;
+}
+
 button {
   font-family: inherit;
   font-size: 2em;
+  font-weight: 700;
   border: none;
   background: lightgreen;
-  padding: 10px 20px;
+  padding: 5px 25px;
   text-transform: uppercase;
 }
 
@@ -68,16 +62,41 @@ button:disabled {
   cursor: not-allowed;
 }
 
-
-.outerContainer {
-  position: relative;
-  min-height: 100vh;
-}
-
+/* Results */
 .results {
-  padding-bottom: 100px;
+  margin-bottom: 60px;
 }
 
+.results__wordcount {
+  line-height: 2.3rem;
+  font-size: 1.8em;
+  padding: 1.5rem;
+}
+
+.results__top {
+  font-size: 2em;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.results__item {
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 3rem;;
+}
+
+.results__item__score {
+  font-weight: 700;
+}
+
+@keyframes pulse {
+  0% {font-size: 1.2rem;}
+  100% {font-size: 1.4rem;}
+}
+
+.new-high {
+  animation: pulse 0.7s linear 0s infinite alternate;
+}
 
 /* Footer */
 .footer {
@@ -89,6 +108,6 @@ button:disabled {
 }
 
 .logo {
-  width: 200px;
+  width: 150px;
   padding: 10px 30px;
 }

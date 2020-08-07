@@ -1,4 +1,3 @@
-  
 import React from 'react';
 
 function Footer() {
@@ -8,7 +7,7 @@ function Footer() {
                 <img className="logo" src="/logo.png" alt=""/>
             </a>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;
